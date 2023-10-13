@@ -35,16 +35,23 @@
                     <div class=" flip-card-back">
                         <div class="tekst">
                             <h1>Swen te Mebel</h1>
-                            <p>
+                            <hr>
+                            <p class="functies">
                                 <b>Bedrijf:</b> Scheffer Keukens<br>
                                 <b>Functie:</b> Systeembeheerder<br>
-                                <b>Studie:</b>Full Stack Developer<br>
-                                <br>
+                                <b>Studie:</b> Full Stack Developer<br>
                             </p>
-                            <p>
-                                <b>Vaardigheden:</b> HTML, CSS3, JS, Java, PHP, MySQL, Python.<br>
-                                <b>Framework:</b> Vue.js
+                            <hr>
+                            <p class="vaardigheden">
+                                <b>Geen geheimen:</b> HTML, CSS3, JS,<br>
+                                <b>Geheimen:</b> MySQL, PHP, Java, Python<br>
+                                <b>Framework:</b> Vue.js, JQuery
                             </p>
+                            <div class="plaatjes">
+                                <img src="/Certeficaten/javascript_sp.jpg" alt="JavaScrip specialist">
+                                
+                            </div>
+                            
                         </div>
                         <div class="persoonlijk">
                             <div class="mail"><i class="fa-solid fa-envelope"></i>
@@ -52,7 +59,7 @@
                             </div>
                             <br>
                             <div class="telefoon">
-                                <i class="fa-solid fa-mobile"></i><a href='tel:+031624539865'>+031-624539865</a>
+                                <i class="fa-solid fa-mobile"></i><a href='tel:+031624539865'> +031-624539865</a>
                             </div><br>
                             <div class="adres"><i class="fa-solid fa-house"></i> Aalten</div>
 
@@ -74,50 +81,73 @@
             <div class="display">
                 <div class="navbar">
                     <ul>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#contact"></i>Contact</a></li>
                         <li><a href="#aboutMe">About Me</a></li>
-                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#projects"></i>Projects</a></li>
+                        <li><a href="#certificate">Certificate</a></li>
                     </ul>
                 </div>
                 <div id='voorstel' class="voorstel">
-                    <p>Hi, My name is <b>Swen</b></p>
+                    <p>Hi, My name is <b>Swen</b>.</p>
                 </div>
                 <div id="contact">
                     <h2>Contact</h2>
-
                     <div class="mail"><i class="fa-solid fa-envelope"></i><a href="mailto:swentemebel@outlook.com">
                             swentemebel@outlook.com</a></div>
                     <br>
                     <div class="telefoon">
                         <i class="fa-solid fa-mobile"></i> <a href="tel:+031 624539865">+031-624539865</a>
                     </div>
-
-                    <textarea placeholder="Laat een bericht achter"></textarea><br>
-                    <input type="submit" value="Verzend">
+                    <br>
+                    <form action="mailto:swentemebel@outlook.com" method="post" enctype="text/plain">
+                        <label for="vnaam">Naam:</label><br>
+                        <input type="text" id="vnaam" name="vnaam" placeholder="Naam" required><br>
+                        <label for="telNr">Telefoon Nr:</label><br>
+                        <input type="tel" id="telNr" name="telNr" placeholder="0612345678" maxlength="10"><br>
+                        <textarea placeholder="Laat een bericht achter"></textarea><br>
+                        <input type="submit" value="Verstuur">
+                    </form>
+                   
                 </div>
                 <div id="aboutMe">
                     <div class="tekst">
                         <h2>About Me</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit eos mollitia consequatur optio
-                            illum quos tempora, esse repudiandae ipsa? Sint consequuntur qui cumque magnam ab eos
-                            corrupti, libero iure autem!</p>
+                        <hr>
+                        <p>Leuk dat je hier even een kijkje komt nemen! Ik werk momenteel als junior systeembeheerder.
+                            In de avond uren ben ik vooral bezig met een studie tot Full Stack Developer.<br><br>
+
+                            Voorheen heb ik een studie afgerond als Frond-end Developer. Dit is mij zo goed bevallen dat
+                            ik de stap heb genomen om door te leren. Daarom sta ik dan ook om te springen om in een
+                            development team aan de slag te gaan en om mijn skills uit te breiden.</p>
                     </div>
                 </div>
                 <div id="projects">
                     <div class="tekst">
                         <h2>Projects</h2>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum quidem impedit sit repellat
-                            eum consequatur libero enim doloribus. Aliquid reprehenderit unde distinctio nobis nesciunt
-                            laborum deleniti neque atque non numquam inventore repudiandae, consectetur error obcaecati,
-                            quibusdam rerum tempora cum, quaerat commodi quis. Sit aut, dolor possimus tempora ab unde
-                            placeat.</p>
+                        <hr>
+                        <p>Ik ben bezig met leuk projecten. Dit is om mijn grenzen steeds meer te verlegen. Deze
+                            projecten kun je vinden op mijn <a href="https://github.com/SwenteMebel" style="color: red;">GitHub</a> account.
+                            <br><br>
+                            En er zullen zeker nog leuke projecten bij komen, volg me daarom dan ook!
+                        </p>
+                    </div>
+                </div>
+                <div id="certificate">
+                    <div class="tekst">
+                        <h2>Certeficaat</h2>
+                        <hr>
+                        <iframe src="/Certeficaten/CIW JavaScript Specialist certificate.pdf"></iframe>
+                        <br>
+                        <iframe
+                            src="/Certeficaten/Afronding module Front-end development online 2122 P2[762].pdf"></iframe>
                     </div>
                 </div>
             </div>
             <div class="special">
-                <div class="likes"><i class="fa-solid fa-heart fa-1x" id="like" style="color: #f8f8fa;"></i> Like <span
-                        id="tellerLikes"></span></div>
-                <div class="Bezoekteller"><span id="tellerbezoekers"></span></div>
+                    Leuk dat je er bent <span id="bezoeker"></span>
+                <!--<div class="likes"><i class="fa-solid fa-heart fa-1x" id="like" style="color: #f8f8fa;"></i><span
+                        id="aantalLikes"></span></div>
+                <div class="Bezoekteller"><span id="tellerbezoekers"></span></div> -->
             </div>
         </div>
     </div>

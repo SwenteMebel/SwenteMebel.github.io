@@ -2,15 +2,20 @@
 body{
     display: flex;
     justify-content: center;
-    font-family: 'Fredericka the Great', cursive;
+    font-family: 'Bacasime Antique', serif;
     background-image: url(/img/svg.png);
     background-repeat: no-repeat;
     background-size: cover;
   
 } 
+
+:root{
+  --text: #080808;
+  --achtergrond: rgba(209, 209, 204);; 
+}
 .card{
   background-image: linear-gradient(to top left, rgb(0, 0, 0), rgb(197, 190, 190));
-    width: 900px;
+    max-width: 900px;
     height: auto;
     display: grid;
     column-gap: 1%;
@@ -20,9 +25,12 @@ body{
     box-shadow: 10px 10px 10px rgb(17, 17, 17);
     margin-top: 50px;
     margin-bottom: 67px;
+    opacity: 0.5;
 }
+
 .card:hover{
   box-shadow: 5px 8px 10px rgb(17, 17, 17);
+  opacity: 0.8;
 }
 .card-links{
     width: 450px;
@@ -78,7 +86,7 @@ body{
   .flip-card-front {
     background-color: #757373;
     color: black;
-    border-radius: 40% 32% 50% 0%;
+    border-radius: 40% 32% 50% 10%;
     box-shadow: 3px 10px 10px rgb(0, 0, 0);
     background-image: url('https://media.licdn.com/dms/image/C5603AQGMOrfmvZmMZA/profile-displayphoto-shrink_800_800/0/1652469160653?e=1692230400&v=beta&t=fXjzJk63iZvsTHNcVDS21iv2VQjW4WfjOFDVO9DIn6Y');
     background-size:cover;
@@ -87,13 +95,30 @@ body{
  
   /* Style the back side */
   .flip-card-back {
-    background-color: rgba(238, 238, 15, 0.3);
+    background-color: var(--achtergrond);
     color: rgb(24, 22, 22);
     transform: rotateY(180deg);
     border-radius: 2%;
     display: grid;
     grid-template-rows: 90% 10%;
   }
+  .plaatjes {
+    background-color: #706767;
+    border-radius: 8px;
+    margin: 2px;
+    padding: 5px;
+    opacity: 0.5;
+    border: 2px solid black;
+    
+  }
+  .plaatjes img{
+    width:30%;
+    aspect-ratio: 4/3;
+    object-fit: contain;
+    mix-blend-mode:color-burn;
+    
+  }
+  
   .social{
     width: 100%;
     background-color: rgba(238, 238, 15, 0.3);
@@ -140,14 +165,16 @@ body{
   }
   li a {
     background-color: rgba(238, 238, 15, 0.3);
+    text-transform: uppercase;
     text-decoration: none;
     color: rgb(0, 0, 0);
-    padding: 4px;
-    border-radius: 8%;
+    padding: 2px;
+    border-radius: 0.25rem;
     border: 2px solid black;
-    font-size: 16px;
-    font-weight: 800;
+    font-family: 'IBM Plex mono';
+    font-weight: 700;
     box-shadow: 4px 6px 5px black;
+    transition: transform 50ms, box-shadow 50ms;
   }
   li a:hover{
     background-color: black;
@@ -157,9 +184,17 @@ body{
   .special{
     background-color: rgba(219, 219, 11, 0.3);
     text-align: center;
-    font-size: 17px;
+    font-size: 19px;
     margin-right: 5px;
     border-radius: 8px 0px 0px 8px;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #bezoeker {
+    margin-left: 4px;
+    color: antiquewhite;
   }
   .voorstel{
     height: 490px;
@@ -170,24 +205,61 @@ body{
     left: 9%;
     top: 20%;
     width: 375px;
-    background-color: rgba(238, 238, 15, 0.3);
+    background-color: --;
     border-radius: 8px;
     border: 2px solid black;
     padding: 10px;
     box-shadow: 5px 5px 10px rgb(0, 0, 0);
   }
+  .vaardigheden{
+    margin: 8px;
+    text-align: start;
+  }
+  .functies {
+    margin: 8px;
+    text-align: start;
+  }
   .mail > a {
     text-decoration: none;
     color: black;
   }
+
+  #contact .mail:hover{
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 2px;
+    margin: 0px 20% 0px 20%;
+  }
+
+  .mail:hover{
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 2px;
+  }
+
   .telefoon > a{
     text-decoration: none;
     color: black;
   }
+
+  #contact .telefoon:hover{
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 8px;
+    padding: 2px;
+    margin: 0px 25% 0px 25%;
+    text-align: center;     
+  }
+  .telefoon:hover{
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 8px;
+    padding: 2px;
+    text-align: center;     
+  }
+
   #contact{
     display: grid;
     text-align: center;
-    background-color: rgba(238, 238, 15, 0.3);
+    background-color: var(--achtergrond);
     border-radius: 8px;
     margin: 0px 10px 50px 10px;
     border: 2px solid black;
@@ -196,36 +268,55 @@ body{
   #contact:hover{
     box-shadow: 3px 3px 10px rgb(0, 0, 0);
   }
+
+  form > input{
+    width: 70%;
+    border-radius: 8px;
+    border: 3px solid black;
+    padding: 3px;
+  }
+  form {
+  margin-bottom: 20px;
+  }
   textarea{
     max-height: 200px;
     height: 75px;
-    margin: 20px;
-    color: white;
-    padding: 10px;
+    margin: 10px;
+    color: rgb(5, 3, 3);
+    padding: 6px;
     font-size: 16px;
-    
+    max-width:70%;
+    width: 70%;
     border: 3px solid black;
     border-radius: 8px;
   }
   textarea:hover{
     background-color: rgb(7, 7, 7);
     border: 2px solid gold;
+    color: white;
   }
   input[type=submit]{
-    
-    padding: 6px;
+    padding: 5px;
     font-weight: 600;
     border: 3px solid black;
     border-radius: 8px;
     margin: 0px 20px 10px 20px;
+    width: 70%;
+  }
+  form input:focus{
+    box-shadow: 2px 2px 28px rgb(0, 0, 0) ;
+    background-color: #000000;
+    color: white;
+    border: 2px solid gold;
   }
   input[type=submit]:hover{
     background-color: rgb(7, 7, 7);
     border: 2px solid gold;
     color: white;
+    box-shadow: 8px 6px 28px rgb(0, 0, 0) ;
   }
   #aboutMe{
-    background-color: rgba(238, 238, 15, 0.3);
+    background-color: var(--achtergrond);
     margin: 0px 10px 50px 10px;
     border: 2px solid black;
     border-radius: 8px;
@@ -241,8 +332,12 @@ body{
   .tekst {
    padding: 8px;
   }
+  .tekst a{
+    text-decoration: none;
+    color: var(--text);
+  }
   #projects{
-    background-color: rgba(238, 238, 15, 0.3);
+    background-color: var(--achtergrond);
     margin: 10px;
     border: 2px solid black;
     border-radius: 8px;
@@ -252,4 +347,21 @@ body{
   #projects:hover{
     box-shadow: 3px 3px 10px rgb(0, 0, 0);
   }
+  iframe{
+    height: 340px;
+    width: 400px;
+    border: 0px;
+  }
+  #certificate{
+    background-color: var(--achtergrond);
+    margin: 10px;
+    border: 2px solid black;
+    border-radius: 8px;
+    margin: 0px 10px 50px 10px;
+    box-shadow: 10px 10px 5px black;
+  }
+  #certificate:hover{
+    box-shadow: 3px 3px 10px rgb(0, 0, 0);
+  }
+
 

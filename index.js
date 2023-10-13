@@ -1,7 +1,8 @@
 $(document).ready(function(){
-
-    // Cookie
     checkCoockie() 
+    let bezoeker = $('#bezoeker');
+
+        // Cookie 
         function setCookie(cname, cvalue, exDate){
             const day = new Date();
             day.setTime(day.getTime() + (exDate*24*60*60*1000));
@@ -29,19 +30,16 @@ $(document).ready(function(){
     
         function checkCoockie(){
             let user = getCookie('username');
+            document.getElementById('bezoeker').innerText = user;
             if(user != ''){
                 alert('Fijn dat je er weer bent ' + user);
             }  else {
-                user = prompt('Wat is uw naam?', '')
+                user = prompt('Ik maak gebruik van Cookies./n Vul uw naam in als u hier mee akkorod gaat/n Wat is uw naam?', '')
                 if( user != '' && user != null){
                     setCookie('username', user, 1)
                 }
             }
         }
 
-
-    $('#like').on('click', () => {
-        console.log('klik')
-    })
 console.log('pagina geladen')
 });
